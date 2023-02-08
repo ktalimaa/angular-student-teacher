@@ -19,8 +19,9 @@ export class AppComponent implements OnInit {
   toShow = true;
 
   students: Student [] = [];
-  studentInfo: string[] = ['Jaan', 'Peeter', 'Oss'];
-  studentInfoLastName: string[] = ['Jaani', 'Pets', 'Orav'];
+
+  studentTitle = 'List of students';
+  teacherTitle = 'List of teachers';
 
   // @ts-ignore
   fetchStudents(): Student[] {
@@ -33,7 +34,6 @@ export class AppComponent implements OnInit {
   }
 
   teachers: Teacher [] = [];
-  teacherInfo: string[] = ['Mati', 'Kati', 'Lembit'];
 
   // @ts-ignore
   fetchTeachers(): Teacher[] {
@@ -45,18 +45,5 @@ export class AppComponent implements OnInit {
     return teachers;
   }
 
-  addStudent() {
-    let studentFirstName = this.studentInfo.at(Math.floor(Math.random() * this.studentInfo.length));
-    let studentLastName = this.studentInfoLastName.at(Math.floor(Math.random() * this.studentInfoLastName.length));
-    // @ts-ignore
-    this.students.push(new Student(studentFirstName, studentLastName, 25, 4, 'Java'));
-  }
-
   // should do the same with age, grade and subject also like with names, add it to teacher too
-
-  addTeacher() {
-    let teacherFirstName = this.teacherInfo.at(Math.floor(Math.random() * this.teacherInfo.length));
-    // @ts-ignore
-    this.teachers.push(new Teacher(teacherFirstName, 'Karis', 45, 'alarkaris@gmail.com', 'Phyton'));
-  }
 }
