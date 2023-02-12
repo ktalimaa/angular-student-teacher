@@ -44,6 +44,4 @@ export class AppComponent implements OnInit {
 
     return teachers;
   }
-
-  // should do the same with age, grade and subject also like with names, add it to teacher too
 }
