@@ -7,6 +7,7 @@ import { StudentComponent } from './student/student.component';
 import { TeacherFormComponent } from './teacher-form/teacher-form.component';
 import { StudentFormComponent } from './student-form/student-form.component';
 import {FormsModule} from "@angular/forms";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import {FormsModule} from "@angular/forms";
   ],
     imports: [
         BrowserModule,
-        FormsModule
+        FormsModule,
+        BrowserAnimationsModule
     ],
   providers: [],
   bootstrap: [AppComponent]
