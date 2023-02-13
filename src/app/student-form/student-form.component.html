@@ -1,0 +1,30 @@
+<a href="#" (click)="showStudentForm()">Add new student</a>
+<div id="studentList" *ngIf="students.length > 0">
+  <h1>List of added students</h1>
+  <ul>
+    <li *ngFor="let student of students">{{ student.firstName }}</li>
+  </ul>
+</div>
+
+<div id="studentFormDiv" *ngIf="isShowForm">
+  <h3>Add a new student:</h3>
+  <form id="studentForm" #studentForm="ngForm" (ngSubmit)="addStudent(studentForm)">
+
+    <label for="firstName">Student first name:</label>
+    <input type="text" name="firstName" id="firstName" [(ngModel)]="firstName"/>
+    <br/>
+    <label for="lastName">Student last name:</label>
+    <input type="text" name="lastName" id="lastName" [(ngModel)]="lastName"/>
+    <br/>
+    <label for="age">Age:</label>
+    <input type="text" name="age" id="age" [(ngModel)]="age"/>
+    <br/>
+    <label for="grade">Grade:</label>
+    <input type="text" name="grade" id="grade" [(ngModel)]="grade"/>
+    <br/>
+    <label for="subject">Subject:</label>
+    <input type="text" name="subject" id="subject" [(ngModel)]="subject"/>
+    <br/>
+    <button type="submit">Add new student!</button>
+  </form>
+</div>

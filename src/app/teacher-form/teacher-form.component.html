@@ -1,0 +1,30 @@
+<a href="#" (click)="showTeacherForm()">Add new teacher</a>
+<div id="teacherList" *ngIf="teachers.length > 0">
+  <h1>List of added teachers</h1>
+  <ul>
+    <li *ngFor="let teacher of teachers">{{ teacher.firstName }}</li>
+  </ul>
+</div>
+
+<div id="teacherFormDiv" *ngIf="isShowForm">
+  <h3>Add a new teacher</h3>
+  <form id="teacherForm" #teacherForm="ngForm" (ngSubmit)="addTeacher(teacherForm)">
+
+    <label for="firstName">Teacher first name:</label>
+    <input type="text" name="firstName" id="firstName" [(ngModel)]="firstName"/>
+    <br/>
+    <label for="lastName">Teacher last name:</label>
+    <input type="text" name="lastName" id="lastName" [(ngModel)]="lastName"/>
+    <br/>
+    <label for="age">Age:</label>
+    <input type="text" name="age" id="age" [(ngModel)]="age"/>
+    <br/>
+    <label for="email">Email:</label>
+    <input type="text" name="email" id="email" [(ngModel)]="email"/>
+    <br/>
+    <label for="subject">Subject:</label>
+    <input type="text" name="subject" id="subject" [(ngModel)]="subject"/>
+    <br/>
+    <button type="submit">Add new teacher!</button>
+  </form>
+</div>
