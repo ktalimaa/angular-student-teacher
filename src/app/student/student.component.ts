@@ -1,6 +1,6 @@
-import { Component, Input, OnInit, ViewChild } from '@angular/core';
-import { Student } from '../shared/models/Student';
-import { MatTable, MatTableDataSource } from '@angular/material/table';
+import {Component, Input, OnInit, ViewChild} from '@angular/core';
+import {Student} from '../shared/models/Student';
+import {MatTable} from '@angular/material/table';
 
 @Component({
   selector: 'app-student',
@@ -11,15 +11,12 @@ export class StudentComponent implements OnInit {
   @Input() studentTitle = '';
   students: Student[] = [];
   displayedColumns: string[] = [
-    'position',
     'firstName',
     'lastName',
     'age',
     'grade',
     'subject',
   ];
-  dataSource: MatTableDataSource<Student> = new MatTableDataSource();
-
   @ViewChild(MatTable) table!: MatTable<Student>;
 
   studentInfo: string[] = ['Jaan', 'Peeter', 'Oss'];
@@ -40,8 +37,6 @@ export class StudentComponent implements OnInit {
       };
       this.students.push(newStudent);
     }
-    this.dataSource.data = this.students;
-    this.table.renderRows();
   }
 
   addData() {
@@ -62,24 +57,19 @@ export class StudentComponent implements OnInit {
 
     this.students.push(newStudent);
     console.log(this.students);
-    this.dataSource.data = this.students;
     this.table.renderRows();
   }
 
   removeData() {
     this.students.pop();
-    this.dataSource.data = this.students;
+
     this.table.renderRows();
   }
 
   ngOnInit(): void {
-    this.dataSource.data = this.students;
+    this.initializeData();
   }
 }
-
-
-
-
 
 
 // import {Component, Input, OnInit} from '@angular/core';
