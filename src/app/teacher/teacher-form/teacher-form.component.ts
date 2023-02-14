@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {NgForm} from "@angular/forms";
-import {Teacher} from "../shared/models/Teacher";
+import {Teacher} from "../../shared/models/Teacher";
 
 @Component({
   selector: 'app-teacher-form',
