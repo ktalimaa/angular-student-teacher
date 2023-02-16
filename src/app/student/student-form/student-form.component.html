@@ -10,21 +10,54 @@
   <h3>Add a new student:</h3>
   <form id="studentForm" #studentForm="ngForm" (ngSubmit)="addStudent(studentForm)">
 
-    <label for="firstName">Student first name:</label>
-    <input type="text" name="firstName" id="firstName" [(ngModel)]="firstName"/>
+    <label for="firstName">Student first name: </label>
+    <mat-form-field appearance="fill">
+      <mat-label>First name</mat-label>
+      <input matInput type="text" name="firstName" id="firstName" [(ngModel)]="firstName">
+    </mat-form-field>
     <br/>
-    <label for="lastName">Student last name:</label>
-    <input type="text" name="lastName" id="lastName" [(ngModel)]="lastName"/>
+    <label for="lastName">Student last name: </label>
+    <mat-form-field appearance="fill">
+      <mat-label>Last name</mat-label>
+      <input matInput type="text" name="lastName" id="lastName" [(ngModel)]="lastName">
+    </mat-form-field>
     <br/>
-    <label for="age">Age:</label>
-    <input type="text" name="age" id="age" [(ngModel)]="age"/>
+    <label for="age">Student age: </label>
+    <mat-form-field appearance="fill">
+      <mat-label>Age</mat-label>
+      <input matInput type="text" name="age" id="age" [(ngModel)]="age">
+    </mat-form-field>
     <br/>
-    <label for="grade">Grade:</label>
-    <input type="text" name="grade" id="grade" [(ngModel)]="grade"/>
+    <label for="grade">Student grade: </label>
+    <mat-form-field appearance="fill">
+      <mat-label>Grade</mat-label>
+      <input matInput type="text" name="grade" id="grade" [(ngModel)]="grade">
+    </mat-form-field>
     <br/>
-    <label for="subject">Subject:</label>
-    <input type="text" name="subject" id="subject" [(ngModel)]="subject"/>
-    <br/>
+    <label>Subject: </label>
+    <mat-select [(ngModel)]="subject" style="border: solid">
+      <mat-option value="one">Java</mat-option>
+      <mat-option value="two">Python</mat-option>
+      <mat-option value="three">C++</mat-option>
+    </mat-select>
+    <br><br/>
     <button type="submit">Add new student!</button>
   </form>
 </div>
+
+
+<!--    <label for="firstName">Student first name:</label>-->
+<!--    <input type="text" name="firstName" id="firstName" [(ngModel)]="firstName"/>-->
+<!--    <br/>-->
+<!--    <label for="lastName">Student last name:</label>-->
+<!--    <input type="text" name="lastName" id="lastName" [(ngModel)]="lastName"/>-->
+<!--    <br/>-->
+<!--    <label for="age">Age:</label>-->
+<!--    <input type="text" name="age" id="age" [(ngModel)]="age"/>-->
+<!--    <br/>-->
+<!--    <label for="grade">Grade:</label>-->
+<!--    <input type="text" name="grade" id="grade" [(ngModel)]="grade"/>-->
+<!--    <br/>-->
+<!--    <label for="subject">Subject:</label>-->
+<!--    <input type="text" name="subject" id="subject" [(ngModel)]="subject"/>-->
+<!--    <br/>-->

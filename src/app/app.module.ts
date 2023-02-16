@@ -13,6 +13,8 @@ import {MatButtonModule} from "@angular/material/button";
 import {MatSortModule} from "@angular/material/sort";
 import {TeacherModule} from "./teacher/teacher.module";
 import {StudentModule} from "./student/student.module";
+import {MatInputModule} from "@angular/material/input";
+import {MatSelectModule} from "@angular/material/select";
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import {StudentModule} from "./student/student.module";
     MatButtonModule,
     MatSortModule,
     TeacherModule,
-    StudentModule
+    StudentModule,
+    MatInputModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

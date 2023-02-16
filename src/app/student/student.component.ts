@@ -19,18 +19,17 @@ export class StudentComponent implements OnInit {
   ];
   @ViewChild(MatTable) table!: MatTable<Student>;
 
-  studentInfo: string[] = ['Jaan', 'Peeter', 'Oss'];
-  studentInfoLastName: string[] = ['Jaani', 'Pets', 'Orav'];
-  studentInfoAge: number[] = [23, 24, 25];
-  studentInfoGrade: number[] = [4, 5];
+  studentInfo: string[] = ['Harry', 'Peter', 'Oliver', 'James', 'Will'];
+  studentInfoLastName: string[] = ['Potter', 'Miller', 'Smith', 'Jones', 'Davis'];
+  studentInfoAge: number[] = [23, 24, 25, 26, 27];
+  studentInfoGrade: number[] = [3, 4, 5];
   studentInfoSubject: string[] = ['Java', 'Python', 'C++', 'JavaScript'];
 
   initializeData() {
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 1; i++) {
       const newStudent: Student = {
-        // position: i + 1,
-        firstName: 'Student ' + (i + 1),
-        lastName: 'Last Name ' + (i + 1),
+        firstName: 'First name ' + (i + 1),
+        lastName: 'Last name ' + (i + 1),
         age: 18 + i,
         grade: Math.floor(Math.random() * 5) + 1,
         subject: 'Subject ' + (i + 1)
@@ -70,37 +69,3 @@ export class StudentComponent implements OnInit {
     this.initializeData();
   }
 }
-
-
-// import {Component, Input, OnInit} from '@angular/core';
-// import {Student} from "../shared/models/Student";
-//
-// @Component({
-//   selector: 'app-student',
-//   templateUrl: './student.component.html',
-//   styleUrls: ['./student.component.css']
-// })
-// export class StudentComponent implements OnInit {
-//
-//   @Input() studentTitle: string = '';
-//   @Input() students: Student[] = [];
-//
-//   ngOnInit(): void {
-//   }
-//
-//   studentInfo: string[] = ['Jaan', 'Peeter', 'Oss'];
-//   studentInfoLastName: string[] = ['Jaani', 'Pets', 'Orav'];
-//   studentInfoAge: number[] = [23, 24, 25];
-//   studentInfoGrade: number[] = [4, 5];
-//   studentInfoSubject: string[] = ['Java', 'Python', 'C++', 'JavaScript'];
-//
-//   addStudent() {
-//     let studentFirstName = this.studentInfo.at(Math.floor(Math.random() * this.studentInfo.length));
-//     let studentLastName = this.studentInfoLastName.at(Math.floor(Math.random() * this.studentInfoLastName.length));
-//     let studentAge = this.studentInfoAge.at(Math.floor(Math.random() * this.studentInfoAge.length));
-//     let studentGrade = this.studentInfoGrade.at(Math.floor(Math.random() * this.studentInfoGrade.length));
-//     let studentSubject = this.studentInfoSubject.at(Math.floor(Math.random() * this.studentInfoGrade.length));
-//     // @ts-ignore
-//     this.students.push(new Student(studentFirstName, studentLastName, studentAge, studentGrade, studentSubject));
-//   }
-// }
