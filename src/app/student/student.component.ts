@@ -1,4 +1,4 @@
-import {Component, Input, OnInit, ViewChild} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {Student} from '../shared/models/Student';
 import {MatTable} from '@angular/material/table';
 
@@ -8,8 +8,8 @@ import {MatTable} from '@angular/material/table';
   styleUrls: ['./student.component.css'],
 })
 export class StudentComponent implements OnInit {
-  @Input() studentTitle = '';
-  students: Student[] = [];
+  // @Input() studentTitle = '';
+  // students: Student[] = [];
   displayedColumns: string[] = [
     'firstName',
     'lastName',
@@ -18,6 +18,17 @@ export class StudentComponent implements OnInit {
     'subject',
   ];
   @ViewChild(MatTable) table!: MatTable<Student>;
+
+  students: Student [] = [];
+
+  fetchStudents(): Student[] {
+    let students: Student[] = [];
+
+    students.push(new Student('Kristel', 'Talimaa', 26, 5, 'Java'));
+    students.push(new Student('Sander', 'Hintsov', 26, 5, 'Phyton'));
+
+    return students;
+  }
 
   studentInfo: string[] = ['Harry', 'Peter', 'Oliver', 'James', 'Will'];
   studentInfoLastName: string[] = ['Potter', 'Miller', 'Smith', 'Jones', 'Davis'];
@@ -67,5 +78,6 @@ export class StudentComponent implements OnInit {
 
   ngOnInit(): void {
     this.initializeData();
+    this.students = this.fetchStudents();
   }
 }

@@ -1,4 +1,4 @@
-import {Component, Input, OnInit, ViewChild} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {Teacher} from "../shared/models/Teacher";
 import {MatTable} from "@angular/material/table";
 
@@ -9,9 +9,7 @@ import {MatTable} from "@angular/material/table";
 })
 export class TeacherComponent implements OnInit {
 
-  @Input() teacherTitle: string = '';
-
-
+  // @Input() teacherTitle: string = '';
   teachers: Teacher[] = [];
 
   displayedColumns: string[] = [
@@ -69,8 +67,18 @@ export class TeacherComponent implements OnInit {
     this.table.renderRows();
   }
 
+  fetchTeachers(): Teacher[] {
+    let teachers: Teacher[] = [];
+
+    teachers.push(new Teacher('Vinod', 'John', 30, 'vinod@gmail.com', 'Java'));
+    teachers.push(new Teacher('Uche', 'Ahun', 29, 'uche@gmail.com', 'Phyton'));
+
+    return teachers;
+  }
+
   ngOnInit(): void {
     this.initializeData();
+    this.teachers = this.fetchTeachers();
   }
 
 
