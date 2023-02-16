@@ -6,6 +6,7 @@
   </ul>
 </div>
 
+<!--(mouseover)="mouseOverForm()" (mouseout)="mouseOutForm()" into next line -->
 <div id="teacherFormDiv" *ngIf="isShowForm">
   <h3>Add a new teacher</h3>
   <form id="teacherForm" #teacherForm="ngForm" (ngSubmit)="addTeacher(teacherForm)">

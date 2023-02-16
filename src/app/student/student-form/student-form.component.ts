@@ -17,12 +17,28 @@ export class StudentFormComponent {
   subject: string = '';
   isShowForm: boolean = false;
 
+  // isMouseOverForm: boolean = false;
+  // isMouseOutForm: boolean = false;
+
   addStudent(studentForm: NgForm) {
     this.students.push(new Student(this.firstName, this.lastName, +this.age, +this.grade, this.subject));
     studentForm.reset();
-}
+  }
 
-  showStudentForm() {
+  showStudentForm(){
     this.isShowForm = true;
   }
+
+  // showStudentForm() {
+  //   if (this.isMouseOverForm) {
+  //     this.isShowForm = true;
+  //   }
+  // }
+  // mouseOverForm() {
+  //   this.isMouseOverForm = true;
+  // }
+  //
+  // mouseOutForm() {
+  //   this.isMouseOverForm = false;
+  // }
 }

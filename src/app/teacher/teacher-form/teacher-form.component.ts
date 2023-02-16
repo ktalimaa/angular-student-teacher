@@ -16,6 +16,8 @@ export class TeacherFormComponent {
   email: string = '';
   subject: string = '';
   isShowForm: boolean = false;
+  // isMouseOverForm: boolean = false;
+  // isMouseOutForm: boolean = false;
 
   addTeacher(teacherForm: NgForm) {
     this.teachers.push(new Teacher(this.firstName, this.lastName, +this.age, this.email, this.subject));
@@ -25,4 +27,13 @@ export class TeacherFormComponent {
   showTeacherForm() {
     this.isShowForm = true;
   }
+
+  //
+  // mouseOverForm() {
+  //   this.isMouseOverForm = true;
+  // }
+  //
+  // mouseOutForm() {
+  //   this.isMouseOutForm = true;
+  // }
 }
